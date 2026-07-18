@@ -54,7 +54,7 @@ function App() {
         name: f.name,
         id: `${Date.now()}-${i}`,
       }));
-    setFiles((prev) => [...prev, ...next].slice(0, 8));
+    setFiles((prev) => [...prev, ...next].slice(0, 20));
   };
   const analyze = async () => {
     if (!files.length) return;
@@ -453,9 +453,6 @@ function Upload({ files, addFiles, setFiles, inputRef, analyze, error }) {
         <span className="header-note">AI-аудит клиентского опыта</span>
       </header>
       <section className="hero">
-        <div className="eyebrow">
-          <Sparkles size={14} /> UX/UI QUALITY GATE
-        </div>
         <h1>
           Найдём, что мешает
           <br />
@@ -472,7 +469,7 @@ function Upload({ files, addFiles, setFiles, inputRef, analyze, error }) {
             <span className="step-no">01</span>
             <h2>Добавьте экраны</h2>
           </div>
-          <span className="limit">до 8 файлов · PNG, JPG</span>
+          <span className="limit">до 20 файлов · PNG, JPG</span>
         </div>
         <div
           className={"dropzone " + (files.length ? "has-files" : "")}
@@ -499,7 +496,7 @@ function Upload({ files, addFiles, setFiles, inputRef, analyze, error }) {
                   </button>
                 </div>
               ))}
-              {files.length < 8 && (
+              {files.length < 20 && (
                 <div
                   className="add-thumb"
                   onClick={() => inputRef.current.click()}
@@ -544,7 +541,7 @@ function Upload({ files, addFiles, setFiles, inputRef, analyze, error }) {
         </button>
       </section>
       <footer>
-        <span>Privacy by design</span>
+        <span>Но это не точно</span>
         <span>Изображения отправляются в OpenAI API только для анализа</span>
       </footer>
     </main>

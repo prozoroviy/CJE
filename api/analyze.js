@@ -49,8 +49,8 @@ export default async function handler(req, res) {
       .status(500)
       .json({ error: "На сервере не настроен OPENAI_API_KEY" });
   const images = req.body?.images;
-  if (!Array.isArray(images) || !images.length || images.length > 8)
-    return res.status(400).json({ error: "Передайте от 1 до 8 изображений" });
+  if (!Array.isArray(images) || !images.length || images.length > 20)
+    return res.status(400).json({ error: "Передайте от 1 до 20 изображений" });
   if (
     images.some(
       (image) => typeof image !== "string" || !image.startsWith("data:image/"),

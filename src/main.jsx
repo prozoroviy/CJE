@@ -118,7 +118,7 @@ function App() {
   );
   const blocked = counts.Critical + counts.Major > 0;
 
-  async function downloadPptx() {
+  async function downloadPptxLegacy() {
     const pptx = new PptxGenJS();
     pptx.layout = "LAYOUT_WIDE";
     pptx.author = "CX Review";
@@ -392,6 +392,427 @@ function App() {
           margin: 0,
         },
       );
+    });
+    await pptx.writeFile({ fileName: "CX-Review-report.pptx" });
+  }
+
+  async function downloadPptx() {
+    const pptx = new PptxGenJS();
+    pptx.layout = "LAYOUT_WIDE";
+    pptx.author = "CX Review";
+    pptx.subject = "UX/UI audit";
+    pptx.title = "CX Review — UX/UI audit";
+    pptx.theme = {
+      headFontFace: "Arial",
+      bodyFontFace: "Arial",
+      lang: "ru-RU",
+    };
+
+    const C = {
+      ink: "171714",
+      muted: "74746D",
+      panel: "F1F1EC",
+      rule: "D5D5CD",
+      Critical: "E5483F",
+      Major: "E9822B",
+      Minor: "8A8A82",
+      lime: "B6F36B",
+      white: "FFFFFF",
+    };
+    const assets = await Promise.all(
+      files.map(async ({ file, name }) => {
+        const bitmap = await createImageBitmap(file);
+        const size = { width: bitmap.width, height: bitmap.height };
+        bitmap.close();
+        return {
+          data: await prepareImage(file),
+          name: name.replace(/\.[^.]+$/, ""),
+          ...size,
+        };
+      }),
+    );
+    const contain = (asset, x, y, w, h) => {
+      const scale = Math.min(w / asset.width, h / asset.height);
+      const width = asset.width * scale,
+        height = asset.height * scale;
+      return {
+        x: x + (w - width) / 2,
+        y: y + (h - height) / 2,
+        w: width,
+        h: height,
+      };
+    };
+    const addHeader = (slide, kicker, title, page) => {
+      slide.background = { color: C.white };
+      slide.addText(kicker.toUpperCase(), {
+        x: 0.6,
+        y: 0.36,
+        w: 5.5,
+        h: 0.22,
+        fontSize: 9,
+        bold: true,
+        color: C.muted,
+        charSpacing: 1.1,
+        margin: 0,
+      });
+      slide.addText(title, {
+        x: 0.6,
+        y: 0.72,
+        w: 10.7,
+        h: 0.55,
+        fontSize: 26,
+        bold: true,
+        color: C.ink,
+        margin: 0,
+        breakLine: false,
+      });
+      slide.addText(String(page).padStart(2, "0"), {
+        x: 12.1,
+        y: 0.4,
+        w: 0.6,
+        h: 0.2,
+        fontSize: 9,
+        color: C.muted,
+        align: "right",
+        margin: 0,
+      });
+      slide.addShape(pptx.ShapeType.line, {
+        x: 0.5,
+        y: 1.32,
+        w: 12.35,
+        h: 0,
+        line: { color: C.rule, width: 1 },
+      });
+    };
+    const stepFindings = assets.map((_, index) =>
+      findings.filter((f) => f.step === index + 1),
+    );
+    const stepCounts = (items) =>
+      items.reduce((acc, item) => (acc[item.severity]++, acc), {
+        Critical: 0,
+        Major: 0,
+        Minor: 0,
+      });
+
+    // Титульный слайд
+    let slide = pptx.addSlide();
+    slide.background = { color: C.ink };
+    slide.addText("CX REVIEW", {
+      x: 0.7,
+      y: 0.58,
+      w: 3,
+      h: 0.28,
+      fontSize: 11,
+      bold: true,
+      color: C.lime,
+      charSpacing: 2,
+      margin: 0,
+    });
+    slide.addText("UX/UI-аудит\nклиентского пути", {
+      x: 0.7,
+      y: 1.55,
+      w: 6.8,
+      h: 1.45,
+      fontSize: 34,
+      bold: true,
+      color: C.white,
+      margin: 0,
+      breakLine: true,
+    });
+    slide.addText(
+      "Автоматизированный разбор экранов и рекомендации перед релизом",
+      {
+        x: 0.72,
+        y: 3.25,
+        w: 6.4,
+        h: 0.6,
+        fontSize: 15,
+        color: "B8B8B2",
+        margin: 0,
+      },
+    );
+    slide.addShape(pptx.ShapeType.roundRect, {
+      x: 9.05,
+      y: 1.55,
+      w: 3.25,
+      h: 2.35,
+      rectRadius: 0.08,
+      fill: { color: blocked ? C.Critical : "5C9D3B" },
+      line: { color: blocked ? C.Critical : "5C9D3B" },
+    });
+    slide.addText(blocked ? "НЕ ДОПУЩЕНО\nК РЕЛИЗУ" : "ДОПУЩЕНО\nК РЕЛИЗУ", {
+      x: 9.4,
+      y: 2.2,
+      w: 2.55,
+      h: 0.8,
+      fontSize: 20,
+      bold: true,
+      color: C.white,
+      align: "center",
+      valign: "mid",
+      margin: 0,
+    });
+    slide.addText(`${files.length} шагов  •  ${findings.length} замечаний`, {
+      x: 0.72,
+      y: 6.75,
+      w: 4.2,
+      h: 0.22,
+      fontSize: 10,
+      color: "8A8A82",
+      margin: 0,
+    });
+
+    // Весь флоу; при большом количестве экранов обзор продолжается на следующих слайдах.
+    const chunks = Array.from(
+      { length: Math.ceil(assets.length / 4) },
+      (_, i) => assets.slice(i * 4, i * 4 + 4),
+    );
+    let page = 2;
+    chunks.forEach((chunk, chunkIndex) => {
+      slide = pptx.addSlide();
+      addHeader(
+        slide,
+        "Результат анализа",
+        chunkIndex
+          ? "Весь путь — продолжение"
+          : "Весь путь — и риск каждого шага",
+        page++,
+      );
+      const cellW = 12.25 / chunk.length;
+      chunk.forEach((asset, localIndex) => {
+        const stepIndex = chunkIndex * 4 + localIndex;
+        const x = 0.55 + localIndex * cellW;
+        const imagePos = contain(asset, x + 0.08, 1.58, cellW - 0.16, 3.6);
+        slide.addImage({ data: asset.data, ...imagePos });
+        slide.addText(`ШАГ ${stepIndex + 1}`, {
+          x,
+          y: 5.35,
+          w: cellW - 0.1,
+          h: 0.18,
+          fontSize: 9,
+          bold: true,
+          color: C.muted,
+          margin: 0,
+        });
+        slide.addText(asset.name || `Шаг ${stepIndex + 1}`, {
+          x,
+          y: 5.58,
+          w: cellW - 0.1,
+          h: 0.3,
+          fontSize: 16,
+          bold: true,
+          color: C.ink,
+          margin: 0,
+          breakLine: false,
+          fit: "shrink",
+        });
+        const sc = stepCounts(stepFindings[stepIndex]);
+        ["Critical", "Major", "Minor"].forEach((severity, severityIndex) => {
+          const y = 6.0 + severityIndex * 0.28;
+          slide.addShape(pptx.ShapeType.ellipse, {
+            x,
+            y: y + 0.035,
+            w: 0.11,
+            h: 0.11,
+            fill: { color: C[severity] },
+            line: { color: C[severity] },
+          });
+          slide.addText(severity, {
+            x: x + 0.18,
+            y,
+            w: 0.78,
+            h: 0.18,
+            fontSize: 9,
+            bold: true,
+            color: sc[severity] ? C.ink : C.muted,
+            margin: 0,
+          });
+          slide.addText(String(sc[severity]), {
+            x: x + 0.98,
+            y,
+            w: 0.25,
+            h: 0.18,
+            fontSize: 9,
+            bold: true,
+            color: sc[severity] ? C.ink : C.muted,
+            align: "right",
+            margin: 0,
+          });
+        });
+      });
+    });
+
+    // Один экран шага и до двух замечаний на слайде.
+    assets.forEach((asset, stepIndex) => {
+      const issues = stepFindings[stepIndex];
+      const issueChunks = issues.length
+        ? Array.from({ length: Math.ceil(issues.length / 2) }, (_, i) =>
+            issues.slice(i * 2, i * 2 + 2),
+          )
+        : [[]];
+      issueChunks.forEach((issueChunk, issuePage) => {
+        slide = pptx.addSlide();
+        addHeader(
+          slide,
+          `Шаг ${stepIndex + 1} · ${asset.name}`,
+          issues.length
+            ? `${issues.length} замечаний на экране${issuePage ? " · продолжение" : ""}`
+            : "Замечаний не обнаружено",
+          page++,
+        );
+        slide.addShape(pptx.ShapeType.roundRect, {
+          x: 0.5,
+          y: 1.56,
+          w: 5.55,
+          h: 5.42,
+          rectRadius: 0.06,
+          fill: { color: C.panel },
+          line: { color: C.rule, width: 1 },
+        });
+        const screen = contain(asset, 0.72, 1.66, 5.1, 5.22);
+        slide.addImage({ data: asset.data, ...screen });
+        issueChunk.forEach((issue, localIndex) => {
+          const issueIndex = issues.indexOf(issue);
+          const box = issue.boundingBox || {
+            x: 0.45,
+            y: 0.45,
+            width: 0.1,
+            height: 0.1,
+          };
+          const bx = screen.x + Math.max(0, Math.min(1, box.x)) * screen.w;
+          const by = screen.y + Math.max(0, Math.min(1, box.y)) * screen.h;
+          const bw = Math.max(0.18, Math.min(1, box.width) * screen.w);
+          const bh = Math.max(0.14, Math.min(1, box.height) * screen.h);
+          const color = C[issue.severity];
+          slide.addShape(pptx.ShapeType.rect, {
+            x: bx,
+            y: by,
+            w: bw,
+            h: bh,
+            fill: { color: C.white, transparency: 100 },
+            line: { color, width: 2 },
+          });
+          slide.addShape(pptx.ShapeType.ellipse, {
+            x: bx - 0.13,
+            y: by - 0.13,
+            w: 0.36,
+            h: 0.36,
+            fill: { color: C.white },
+            line: { color, width: 2 },
+          });
+          slide.addText(String(issueIndex + 1), {
+            x: bx - 0.06,
+            y: by - 0.065,
+            w: 0.22,
+            h: 0.2,
+            fontSize: 10,
+            bold: true,
+            color,
+            align: "center",
+            margin: 0,
+          });
+          const y = 1.76 + localIndex * 2.45;
+          slide.addText(issue.severity.toUpperCase(), {
+            x: 6.6,
+            y,
+            w: 1.4,
+            h: 0.2,
+            fontSize: 10,
+            bold: true,
+            color,
+            margin: 0,
+          });
+          slide.addText(`${issueIndex + 1}. ${issue.title}`, {
+            x: 6.6,
+            y: y + 0.32,
+            w: 5.85,
+            h: 0.52,
+            fontSize: 19,
+            bold: true,
+            color: C.ink,
+            margin: 0,
+            fit: "shrink",
+          });
+          slide.addText(issue.detail, {
+            x: 6.6,
+            y: y + 0.96,
+            w: 5.85,
+            h: 0.52,
+            fontSize: 11.5,
+            color: C.muted,
+            margin: 0,
+            fit: "shrink",
+          });
+          slide.addText(`Рекомендация: ${issue.recommendation}`, {
+            x: 6.6,
+            y: y + 1.58,
+            w: 5.85,
+            h: 0.52,
+            fontSize: 10.5,
+            color: "455236",
+            fill: { color: "F0F5E8" },
+            margin: 0.08,
+            fit: "shrink",
+          });
+          slide.addShape(pptx.ShapeType.line, {
+            x: 6.5,
+            y: y + 2.3,
+            w: 5.9,
+            h: 0,
+            line: { color: C.rule, width: 1 },
+          });
+        });
+      });
+    });
+
+    slide = pptx.addSlide();
+    slide.background = { color: C.ink };
+    slide.addText("ИТОГ АНАЛИЗА", {
+      x: 0.75,
+      y: 0.7,
+      w: 3,
+      h: 0.25,
+      fontSize: 10,
+      bold: true,
+      color: C.lime,
+      charSpacing: 1.5,
+      margin: 0,
+    });
+    slide.addText(
+      blocked
+        ? "Сначала исправить.\nЗатем выпускать."
+        : "Путь готов\nк релизу.",
+      {
+        x: 0.75,
+        y: 1.9,
+        w: 7.5,
+        h: 1.55,
+        fontSize: 39,
+        bold: true,
+        color: C.white,
+        margin: 0,
+      },
+    );
+    slide.addText(
+      blocked
+        ? `${counts.Critical + counts.Major} блокирующих замечаний требуют повторной проверки.`
+        : "Critical и Major замечаний не обнаружено.",
+      {
+        x: 0.78,
+        y: 4.45,
+        w: 6.8,
+        h: 0.55,
+        fontSize: 17,
+        color: "B8B8B2",
+        margin: 0,
+      },
+    );
+    slide.addShape(pptx.ShapeType.line, {
+      x: 0.7,
+      y: 6.15,
+      w: 11.9,
+      h: 0,
+      line: { color: C.lime, width: 5 },
     });
     await pptx.writeFile({ fileName: "CX-Review-report.pptx" });
   }

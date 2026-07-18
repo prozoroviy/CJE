@@ -1,0 +1,120 @@
+{"kind":"deck","id":"pr/z5ds00","name":"Deck"}
+{"kind":"layout","layoutId":"1e768688-52c2-4d15-9669-f726e21ce146","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"fdbba089-f61a-4a00-9fba-dec155b1e09a","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/h5h05y","slide":1,"title":"CX REVIEW","textShapes":5}
+{"kind":"textbox","id":"sh/dsvq98za","slide":1,"name":"cover-brand","text":"CX REVIEW","textPreview":"CX REVIEW","textChars":9,"textLines":1,"bbox":[68,58,260,28]}
+{"kind":"textbox","id":"sh/qpk7yd0j","slide":1,"name":"cover-title","text":"UX/UI-аудит\nклиентского пути","textPreview":"UX/UI-аудит | клиентского пути","textChars":28,"textLines":2,"bbox":[68,154,690,180]}
+{"kind":"textbox","id":"sh/rqd87yh4","slide":1,"name":"cover-subtitle","text":"Автоматизированный разбор экранов и рекомендации перед релизом","textPreview":"Автоматизированный разбор экранов и рекомендации перед релизом","textChars":62,"textLines":1,"bbox":[70,366,650,70]}
+{"kind":"shape","id":"sh/0vm94nil","slide":1,"name":"cover-verdict","bbox":[870,155,320,224]}
+{"kind":"textbox","id":"sh/1wvqdsz6","slide":1,"name":"cover-verdict-label","text":"НЕ ДОПУЩЕНО\nК РЕЛИЗУ","textPreview":"НЕ ДОПУЩЕНО | К РЕЛИЗУ","textChars":20,"textLines":2,"bbox":[902,222,256,92]}
+{"kind":"textbox","id":"sh/et4r2d0v","slide":1,"name":"cover-meta","text":"3 шага  •  6 замечаний","textPreview":"3 шага  •  6 замечаний","textChars":22,"textLines":1,"bbox":[70,642,360,24]}
+{"kind":"notes","id":"nt/h5h05y","slide":1,"text":""}
+{"kind":"slide","id":"sl/r2mvzk","slide":2,"title":"РЕЗУЛЬТАТ АНАЛИЗА","textShapes":27}
+{"kind":"textbox","id":"sh/6dwfmp87","slide":2,"name":"kicker-2","text":"РЕЗУЛЬТАТ АНАЛИЗА","textPreview":"РЕЗУЛЬТАТ АНАЛИЗА","textChars":17,"textLines":1,"bbox":[48,34,520,22]}
+{"kind":"textbox","id":"sh/tgnyx47i","slide":2,"name":"title-2","text":"Весь путь — и риск каждого шага","textPreview":"Весь путь — и риск каждого шага","textChars":31,"textLines":1,"bbox":[48,64,1040,54]}
+{"kind":"textbox","id":"sh/sfexozqd","slide":2,"name":"page-2","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1180,44,52,22]}
+{"kind":"shape","id":"sh/jq5gra9g","slide":2,"name":"rule-2","bbox":[48,126,1184,1]}
+{"kind":"textbox","id":"sh/5cnytkrm","slide":2,"name":"step-0","text":"ШАГ 1","textPreview":"ШАГ 1","textChars":5,"textLines":1,"bbox":[48,548,80,20]}
+{"kind":"textbox","id":"sh/kbexkfq1","slide":2,"name":"step-name-0","text":"Корзина","textPreview":"Корзина","textChars":7,"textLines":1,"bbox":[48,570,350,30]}
+{"kind":"shape","id":"sh/vmlgna9k","slide":2,"name":"badge-Critical-48","bbox":[48,612,12,12]}
+{"kind":"textbox","id":"sh/alcfe58z","slide":2,"name":"badge-label-Critical-48","text":"Critical","textPreview":"Critical","textChars":8,"textLines":1,"bbox":[68,608,92,22]}
+{"kind":"textbox","id":"sh/c3a1krm1","slide":2,"name":"badge-value-Critical-48","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[174,608,28,22]}
+{"kind":"shape","id":"sh/doj2dw36","slide":2,"name":"badge-Major-48","bbox":[48,638,12,12]}
+{"kind":"textbox","id":"sh/q18jih4v","slide":2,"name":"badge-label-Major-48","text":"Major","textPreview":"Major","textChars":5,"textLines":1,"bbox":[68,634,92,22]}
+{"kind":"textbox","id":"sh/r21kbmlg","slide":2,"name":"badge-value-Major-48","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[174,634,28,22]}
+{"kind":"shape","id":"sh/4zq1g7mp","slide":2,"name":"badge-Minor-48","bbox":[48,664,12,12]}
+{"kind":"textbox","id":"sh/p0z29c3a","slide":2,"name":"badge-label-Minor-48","text":"Minor","textPreview":"Minor","textChars":5,"textLines":1,"bbox":[68,660,92,22]}
+{"kind":"textbox","id":"sh/2x8jeh4j","slide":2,"name":"badge-value-Minor-48","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[174,660,28,22]}
+{"kind":"textbox","id":"sh/8vulsbmt","slide":2,"name":"step-1","text":"ШАГ 2","textPreview":"ШАГ 2","textChars":5,"textLines":1,"bbox":[432,548,80,20]}
+{"kind":"textbox","id":"sh/9w32lg3e","slide":2,"name":"step-name-1","text":"Адрес доставки","textPreview":"Адрес доставки","textChars":14,"textLines":1,"bbox":[432,570,350,30]}
+{"kind":"shape","id":"sh/hcz25gvi","slide":2,"name":"badge-Critical-432","bbox":[432,612,12,12]}
+{"kind":"textbox","id":"sh/wbq1cbud","slide":2,"name":"badge-label-Critical-432","text":"Critical","textPreview":"Critical","textChars":8,"textLines":1,"bbox":[452,608,92,22]}
+{"kind":"textbox","id":"sh/vahk36ds","slide":2,"name":"badge-value-Critical-432","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[558,608,28,22]}
+{"kind":"shape","id":"sh/u98ja1w7","slide":2,"name":"badge-Major-432","bbox":[432,638,12,12]}
+{"kind":"textbox","id":"sh/98z21wvm","slide":2,"name":"badge-label-Major-432","text":"Major","textPreview":"Major","textChars":5,"textLines":1,"bbox":[452,634,92,22]}
+{"kind":"textbox","id":"sh/8n618re1","slide":2,"name":"badge-value-Major-432","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[558,634,28,22]}
+{"kind":"shape","id":"sh/7mxkzmdg","slide":2,"name":"badge-Minor-432","bbox":[432,664,12,12]}
+{"kind":"textbox","id":"sh/mloj6hwv","slide":2,"name":"badge-label-Minor-432","text":"Minor","textPreview":"Minor","textChars":5,"textLines":1,"bbox":[452,660,92,22]}
+{"kind":"textbox","id":"sh/lkf2xwvq","slide":2,"name":"badge-value-Minor-432","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[558,660,28,22]}
+{"kind":"textbox","id":"sh/qp4zyxcn","slide":2,"name":"step-2","text":"ШАГ 3","textPreview":"ШАГ 3","textChars":5,"textLines":1,"bbox":[816,548,80,20]}
+{"kind":"textbox","id":"sh/bqd07it8","slide":2,"name":"step-name-2","text":"Оплата","textPreview":"Оплата","textChars":6,"textLines":1,"bbox":[816,570,350,30]}
+{"kind":"shape","id":"sh/crmh0nut","slide":2,"name":"badge-Critical-816","bbox":[816,612,12,12]}
+{"kind":"textbox","id":"sh/dsvi9sbe","slide":2,"name":"badge-label-Critical-816","text":"Critical","textPreview":"Critical","textChars":8,"textLines":1,"bbox":[836,608,92,22]}
+{"kind":"textbox","id":"sh/2lkzudcr","slide":2,"name":"badge-value-Critical-816","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[942,608,28,22]}
+{"kind":"shape","id":"sh/3mtg3itc","slide":2,"name":"badge-Major-816","bbox":[816,638,12,12]}
+{"kind":"textbox","id":"sh/on2hwnux","slide":2,"name":"badge-label-Major-816","text":"Major","textPreview":"Major","textChars":5,"textLines":1,"bbox":[836,634,92,22]}
+{"kind":"textbox","id":"sh/poby5sbi","slide":2,"name":"badge-value-Major-816","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[942,634,28,22]}
+{"kind":"shape","id":"sh/exkzqdcv","slide":2,"name":"badge-Minor-816","bbox":[816,664,12,12]}
+{"kind":"textbox","id":"sh/fitgzyt0","slide":2,"name":"badge-label-Minor-816","text":"Minor","textPreview":"Minor","textChars":5,"textLines":1,"bbox":[836,660,92,22]}
+{"kind":"textbox","id":"sh/7adwbexw","slide":2,"name":"badge-value-Minor-816","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[942,660,28,22]}
+{"kind":"image","id":"im/rqdszepw","slide":2,"name":"","geometry":"roundRect","alt":"Шаг 1: Корзина","bbox":[120,154,207,385]}
+{"kind":"image","id":"im/cfih4bih","slide":2,"name":"","geometry":"roundRect","alt":"Шаг 2: Адрес доставки","bbox":[504,154,207,385]}
+{"kind":"image","id":"im/3e90rql0","slide":2,"name":"","geometry":"roundRect","alt":"Шаг 3: Оплата","bbox":[888,154,207,385]}
+{"kind":"notes","id":"nt/r2mvzk","slide":2,"text":""}
+{"kind":"slide","id":"sl/bek5kh","slide":3,"title":"ШАГ 1 · КОРЗИНА","textShapes":11}
+{"kind":"textbox","id":"sh/s7a1oved","slide":3,"name":"kicker-3","text":"ШАГ 1 · КОРЗИНА","textPreview":"ШАГ 1 · КОРЗИНА","textChars":15,"textLines":1,"bbox":[48,34,520,22]}
+{"kind":"textbox","id":"sh/761kfaxs","slide":3,"name":"title-3","text":"2 замечания на экране","textPreview":"2 замечания на экране","textChars":21,"textLines":1,"bbox":[48,64,1040,54]}
+{"kind":"textbox","id":"sh/65sjm5w7","slide":3,"name":"page-3","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1180,44,52,22]}
+{"kind":"shape","id":"sh/54jid0fm","slide":3,"name":"rule-3","bbox":[48,126,1184,1]}
+{"kind":"shape","id":"sh/k3a1kveh","slide":3,"name":"screen-panel-0","bbox":[48,150,530,522]}
+{"kind":"shape","id":"sh/i18jilwb","slide":3,"name":"marker-ring-0-0","bbox":[400.45,508.58,46,46]}
+{"kind":"textbox","id":"sh/p032pkf6","slide":3,"name":"marker-number-0-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[410.45,517.58,26,28]}
+{"kind":"textbox","id":"sh/4zu1wfel","slide":3,"name":"issue-sev-0-0","text":"MAJOR","textPreview":"MAJOR","textChars":5,"textLines":1,"bbox":[630,172,150,22]}
+{"kind":"textbox","id":"sh/m9cbil03","slide":3,"name":"issue-title-0-0","text":"1. Вторичные суммы почти не читаются","textPreview":"1. Вторичные суммы почти не читаются","textChars":36,"textLines":1,"bbox":[630,206,550,64]}
+{"kind":"textbox","id":"sh/7alcbqho","slide":3,"name":"issue-detail-0-0","text":"Низкий контраст подытога и доставки затрудняет проверку итоговой суммы.","textPreview":"Низкий контраст подытога и доставки затрудняет проверку итоговой суммы.","textChars":71,"textLines":1,"bbox":[630,282,550,72]}
+{"kind":"shape","id":"sh/8butkvi9","slide":3,"name":"issue-rule-0-0","bbox":[630,374,550,1]}
+{"kind":"shape","id":"sh/9c3ud0zu","slide":3,"name":"marker-ring-0-1","bbox":[269.16,481.22,46,46]}
+{"kind":"textbox","id":"sh/y5sbe107","slide":3,"name":"marker-number-0-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[279.16,490.22,26,28]}
+{"kind":"textbox","id":"sh/z61s76hs","slide":3,"name":"issue-sev-0-1","text":"MINOR","textPreview":"MINOR","textChars":5,"textLines":1,"bbox":[630,398,150,22]}
+{"kind":"textbox","id":"sh/07atgbid","slide":3,"name":"issue-title-0-1","text":"2. Промокод выглядит недоступным","textPreview":"2. Промокод выглядит недоступным","textChars":32,"textLines":1,"bbox":[630,432,550,64]}
+{"kind":"textbox","id":"sh/l8ju9gzi","slide":3,"name":"issue-detail-0-1","text":"Поле визуально похоже на отключённое, хотя это доступное действие.","textPreview":"Поле визуально похоже на отключённое, хотя это доступное действие.","textChars":66,"textLines":1,"bbox":[630,508,550,72]}
+{"kind":"shape","id":"sh/i1wbq5gb","slide":3,"name":"issue-rule-0-1","bbox":[630,600,550,1]}
+{"kind":"image","id":"im/m587ux8v","slide":3,"name":"","geometry":"roundRect","alt":"Экран Корзина с отмеченными замечаниями","bbox":[178,161,270,500]}
+{"kind":"notes","id":"nt/bek5kh","slide":3,"text":""}
+{"kind":"slide","id":"sl/4b8wwb","slide":4,"title":"ШАГ 2 · АДРЕС ДОСТАВКИ","textShapes":11}
+{"kind":"textbox","id":"sh/gvqxgvm9","slide":4,"name":"kicker-4","text":"ШАГ 2 · АДРЕС ДОСТАВКИ","textPreview":"ШАГ 2 · АДРЕС ДОСТАВКИ","textChars":22,"textLines":1,"bbox":[48,34,520,22]}
+{"kind":"textbox","id":"sh/fuhw7q5o","slide":4,"name":"title-4","text":"2 замечания на экране","textPreview":"2 замечания на экране","textChars":21,"textLines":1,"bbox":[48,64,1040,54]}
+{"kind":"textbox","id":"sh/et8fel43","slide":4,"name":"page-4","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1180,44,52,22]}
+{"kind":"shape","id":"sh/tsze5gni","slide":4,"name":"rule-4","bbox":[48,126,1184,1]}
+{"kind":"shape","id":"sh/srqdcbmx","slide":4,"name":"screen-panel-1","bbox":[48,150,530,522]}
+{"kind":"shape","id":"sh/6p8va14r","slide":4,"name":"marker-ring-1-0","bbox":[292,337.54,46,46]}
+{"kind":"textbox","id":"sh/5ofe1wnm","slide":4,"name":"marker-number-1-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[302,346.54,26,28]}
+{"kind":"textbox","id":"sh/4n6d8bm1","slide":4,"name":"issue-sev-1-0","text":"CRITICAL","textPreview":"CRITICAL","textChars":8,"textLines":1,"bbox":[630,172,150,22]}
+{"kind":"textbox","id":"sh/ipw3upsb","slide":4,"name":"issue-title-1-0","text":"1. Обязательные поля не обозначены","textPreview":"1. Обязательные поля не обозначены","textChars":34,"textLines":1,"bbox":[630,206,550,64]}
+{"kind":"textbox","id":"sh/jq54nutw","slide":4,"name":"issue-detail-1-0","text":"Нельзя понять, какие данные нужны для продолжения и почему оформление может остановиться.","textPreview":"Нельзя понять, какие данные нужны для продолжения и почему оформление может остановиться.","textChars":89,"textLines":1,"bbox":[630,282,550,72]}
+{"kind":"shape","id":"sh/4relwzah","slide":4,"name":"issue-rule-1-0","bbox":[630,374,550,1]}
+{"kind":"shape","id":"sh/5cnmp4bm","slide":4,"name":"marker-ring-1-1","bbox":[280.58,485.78,46,46]}
+{"kind":"textbox","id":"sh/ulc3qpsz","slide":4,"name":"marker-number-1-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[290.58,494.78,26,28]}
+{"kind":"textbox","id":"sh/vm54jutk","slide":4,"name":"issue-sev-1-1","text":"MAJOR","textPreview":"MAJOR","textChars":5,"textLines":1,"bbox":[630,398,150,22]}
+{"kind":"textbox","id":"sh/wnelsza5","slide":4,"name":"issue-title-1-1","text":"2. Предупреждение не связано с полем","textPreview":"2. Предупреждение не связано с полем","textChars":36,"textLines":1,"bbox":[630,432,550,64]}
+{"kind":"textbox","id":"sh/honml4bq","slide":4,"name":"issue-detail-1-1","text":"Оранжевый текст просит уточнить адрес, но не показывает, где именно требуется исправление.","textPreview":"Оранжевый текст просит уточнить адрес, но не показывает, где именно требуется исправление.","textChars":90,"textLines":1,"bbox":[630,508,550,72]}
+{"kind":"shape","id":"sh/mhc3m5s3","slide":4,"name":"issue-rule-1-1","bbox":[630,600,550,1]}
+{"kind":"image","id":"im/mlofy1cf","slide":4,"name":"","geometry":"roundRect","alt":"Экран Адрес доставки с отмеченными замечаниями","bbox":[178,161,270,500]}
+{"kind":"notes","id":"nt/4b8wwb","slide":4,"text":""}
+{"kind":"slide","id":"sl/y16lv3","slide":5,"title":"ШАГ 3 · ОПЛАТА","textShapes":11}
+{"kind":"textbox","id":"sh/3q50v6ts","slide":5,"name":"kicker-5","text":"ШАГ 3 · ОПЛАТА","textPreview":"ШАГ 3 · ОПЛАТА","textChars":14,"textLines":1,"bbox":[48,34,520,22]}
+{"kind":"textbox","id":"sh/4rehobud","slide":5,"name":"title-5","text":"2 замечания на экране","textPreview":"2 замечания на экране","textChars":21,"textLines":1,"bbox":[48,64,1040,54]}
+{"kind":"textbox","id":"sh/psnixgby","slide":5,"name":"page-5","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,44,52,22]}
+{"kind":"shape","id":"sh/qtwzqlcj","slide":5,"name":"rule-5","bbox":[48,126,1184,1]}
+{"kind":"shape","id":"sh/ru50zqt4","slide":5,"name":"screen-panel-2","bbox":[48,150,530,522]}
+{"kind":"shape","id":"sh/dwni1gbu","slide":5,"name":"marker-ring-2-0","bbox":[292,562.17,46,46]}
+{"kind":"textbox","id":"sh/exwzulcf","slide":5,"name":"marker-number-2-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[302,571.17,26,28]}
+{"kind":"textbox","id":"sh/zyp03qt0","slide":5,"name":"issue-sev-2-0","text":"MAJOR","textPreview":"MAJOR","textChars":5,"textLines":1,"bbox":[630,172,150,22]}
+{"kind":"textbox","id":"sh/7e5wbelo","slide":5,"name":"issue-title-2-0","text":"1. Главное действие выглядит отключённым","textPreview":"1. Главное действие выглядит отключённым","textChars":40,"textLines":1,"bbox":[630,206,550,64]}
+{"kind":"textbox","id":"sh/mdwv29k3","slide":5,"name":"issue-detail-2-0","text":"Кнопка подтверждения почти неотличима от disabled-состояния — пользователь может не завершить оплату.","textPreview":"Кнопка подтверждения почти неотличима от disabled-состояния — пользователь может не завершить оплату.","textChars":101,"textLines":1,"bbox":[630,282,550,72]}
+{"kind":"shape","id":"sh/90nedo3u","slide":5,"name":"issue-rule-2-0","bbox":[630,374,550,1]}
+{"kind":"shape","id":"sh/8fed4j29","slide":5,"name":"marker-ring-2-1","bbox":[280.58,508.58,46,46]}
+{"kind":"textbox","id":"sh/zalw7uls","slide":5,"name":"marker-number-2-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[290.58,517.58,26,28]}
+{"kind":"textbox","id":"sh/y9cvypk7","slide":5,"name":"issue-sev-2-1","text":"MINOR","textPreview":"MINOR","textChars":5,"textLines":1,"bbox":[630,398,150,22]}
+{"kind":"textbox","id":"sh/lc3e943i","slide":5,"name":"issue-title-2-1","text":"2. Предупреждение перегружает финальный шаг","textPreview":"2. Предупреждение перегружает финальный шаг","textChars":43,"textLines":1,"bbox":[630,432,550,64]}
+{"kind":"textbox","id":"sh/kbud0z2d","slide":5,"name":"issue-detail-2-1","text":"Текст повторяет уже выбранные параметры, но не помогает проверить конкретные значения.","textPreview":"Текст повторяет уже выбранные параметры, но не помогает проверить конкретные значения.","textChars":86,"textLines":1,"bbox":[630,508,550,72]}
+{"kind":"shape","id":"sh/36pwjy1w","slide":5,"name":"issue-rule-2-1","bbox":[630,600,550,1]}
+{"kind":"image","id":"im/dgna5ob2","slide":5,"name":"","geometry":"roundRect","alt":"Экран Оплата с отмеченными замечаниями","bbox":[178,161,270,500]}
+{"kind":"notes","id":"nt/y16lv3","slide":5,"text":""}
+{"kind":"slide","id":"sl/r342kg","slide":6,"title":"ПРЕДВАРИТЕЛЬНЫЙ МАКЕТ","textShapes":4}
+{"kind":"textbox","id":"sh/76xwze5g","slide":6,"name":"close-kicker","text":"ПРЕДВАРИТЕЛЬНЫЙ МАКЕТ","textPreview":"ПРЕДВАРИТЕЛЬНЫЙ МАКЕТ","textChars":21,"textLines":1,"bbox":[64,64,440,24]}
+{"kind":"textbox","id":"sh/876x8jm1","slide":6,"name":"close-title","text":"Теперь замечание видно\nпрямо на экране","textPreview":"Теперь замечание видно | прямо на экране","textChars":38,"textLines":2,"bbox":[64,174,820,180]}
+{"kind":"textbox","id":"sh/98ze1o3m","slide":6,"name":"close-body","text":"После подтверждения этот шаблон будет встроен в генератор CX Review.","textPreview":"После подтверждения этот шаблон будет встроен в генератор CX Review.","textChars":68,"textLines":1,"bbox":[66,424,720,70]}
+{"kind":"shape","id":"sh/yhof2p4z","slide":6,"name":"close-accent","bbox":[64,548,1148,8]}
+{"kind":"textbox","id":"sh/zixwvu5k","slide":6,"name":"close-page","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1158,64,54,22]}
+{"kind":"notes","id":"nt/r342kg","slide":6,"text":""}
